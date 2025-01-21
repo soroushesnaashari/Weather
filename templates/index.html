@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App by Mohammad Soroush Esnaashari</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤️ Weather</h1>
+        <form method="POST">
+            <input type="text" name="city" placeholder="Enter city name" required>
+            <button type="submit">Get Weather</button>
+        </form>
+
+        {% if weather_data %}
+        <div class="weather-info">
+            <h2>{{ weather_data['name'] }}, {{ weather_data['sys']['country'] }}</h2>
+            <p><strong>Temperature:</strong> {{ weather_data['main']['temp'] }}°C</p>
+            <p><strong>Humidity:</strong> {{ weather_data['main']['humidity'] }}%</p>
+            <p><strong>Wind Speed:</strong> {{ weather_data['wind']['speed'] }} m/s</p>
+            <p><strong>Conditions:</strong> {{ weather_data['weather'][0]['description'] }}</p>
+        </div>
+        {% endif %}
+
+        <div class="footer">
+            <div class="social-media">
+                <a href="https://soroushesnaashari.github.io" target="_blank" title="Website">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <a href="https://linkedin.com/in/soroushesnaashari" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/soroushesnaashari" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://x.com/srshesn" target="_blank" title="X (Twitter)">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <p>Created by <strong>Mohammad Soroush Esnaashari</strong></p>
+        </div>
+    </div>
+</body>
+</html>
