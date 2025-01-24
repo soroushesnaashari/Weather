@@ -1,4 +1,4 @@
-## Weather Application 🌦️
+## Weather Web Application 🌦️
 [![](screenshot.png)](https://soroushesnaashari.github.io/Weather-App/)
 
 A responsive web application that provides real-time weather information for cities worldwide. Built with modern web technologies to deliver accurate weather data in a clean, user-friendly interface.
